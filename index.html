@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>デジタル母子手帳</title>
+    <style>
+        form {
+            width: 300px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>デジタル母子手帳</h1>
+    <form id="form">
+        <label for="name">名前:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="address">住所:</label><br>
+        <input type="text" id="address" name="address"><br>
+        <label for="gender">性別:</label><br>
+        <input type="text" id="gender" name="gender"><br>
+        <label for="parentName">親の名前:</label><br>
+        <input type="text" id="parentName" name="parentName"><br>
+        <input type="submit" value="送信">
+    </form>
+    <div id="info">
+        <h2>母子手帳の記載事項:</h2>
+        <p>名前: <span id="displayName"></span></p>
+        <p>住所: <span id="displayAddress"></span></p>
+        <p>性別: <span id="displayGender"></span></p>
+        <p>親の名前: <span id="displayParentName"></span></p>
+    </div>
+    <script>
+        document.getElementById('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('displayName').textContent = document.getElementById('name').value;
+            document.getElementById('displayAddress').textContent = document.getElementById('address').value;
+            document.getElementById('displayGender').textContent = document.getElementById('gender').value;
+            document.getElementById('displayParentName').textContent = document.getElementById('parentName').value;
+        });
+    </script>
+</body>
+</html><style>
+    form {
+        width: 300px;
+        margin: 0 auto;
+    }
+    h1 {
+        text-align: center;
+    }
+    @media screen and (max-width: 600px) {
+        form {
+            width: 100%;
+        }
+    }
+</style>
